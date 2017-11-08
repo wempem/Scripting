@@ -1,0 +1,64 @@
+<% include partials/header %>
+
+<div class="container">
+
+    <h1><%= title %></h1>
+
+    <ul>
+        <% students.forEach(function (student) { %>
+            <li>
+                <%= student.first_name %> 
+                <%= student.last_name %>
+                <a href="#" class="updateStudent" data-id="<%= student._id %>">Update</a>
+                <a href="#" class="deleteUser" data-id="<%= student._id %>">Delete</a>
+            </l1>
+            <ul>
+                <li>Email: <%= student.email %></li>
+                <li>Major: <%= student.major %></li>
+                <li>GPA: <%= student.gpa %></li>
+            </ul>
+        <% }) %>
+    </ul>
+
+    <h2>Add Student</h2>
+
+    <% if (errors != undefined) { %>
+        <ul>
+        <% errors.forEach(function(error) { %>
+            <li><%= error.msg %></li>
+        <% }) %>
+        </ul>
+    <% } %>
+
+    <form method="POST" action="/students/add">
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" placeholder="John">
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Doe">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="john@doe.com">
+        </div>
+
+        <div class="form-group">
+            <label for="major">Major</label>
+            <input type="text" name="major" id="major" placeholder="Sociology">
+        </div>
+
+        <div class="form-group">
+            <label for="gpa">GPA</label>
+            <input type="text" name="gpa" id="gpa" placeholder="3.0">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+<% include partials/footer %>
