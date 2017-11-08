@@ -1,0 +1,10 @@
+larry 42
+guido 147
+matz 211
+mary 249
+harry 199
+gary 134
+jerry 193
+sherri 124
+wilma 300
+fred 238

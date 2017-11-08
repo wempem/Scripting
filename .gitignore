@@ -57,4 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
+# Visual Studio Code editor settings
+.vscode/
+
 .DS_Store
+
+# Compiled python modules
+*.pyc

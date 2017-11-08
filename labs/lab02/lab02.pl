@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -33,3 +34,8 @@ foreach my $sorted (sort {$hash{$a} <=> $hash{$b}} keys %hash){
 }
 close $fh3
 
+=======
+use strict;
+use warnings;
+
+>>>>>>> 38ae13c5a814bdaec9c8251839f73099d703e567

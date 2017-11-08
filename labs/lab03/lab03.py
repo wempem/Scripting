@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/python
 
 def max(a, b, c):
@@ -45,3 +46,20 @@ def consonant(text):
 	return True
 print vowel("hi")
 print consonant("qwrty")
+=======
+
+def max(a, b, c):
+    
+
+def median(numbers):
+    
+
+def vowel(text):
+    
+
+def consonant(text):
+    
+
+def palindrome(text):
+    
+>>>>>>> 38ae13c5a814bdaec9c8251839f73099d703e567
