@@ -1,0 +1,66 @@
+<% include partials/header %>
+
+<div class="container">
+
+    <h2>Update Task</h2>
+    
+    <p><a href="/">Home</a><p>
+
+    <form>
+        <input type="hidden" name="_id" id="_id" value="<%= task._id %>">
+        <div class="form-group">
+            <label for="task_id">Task Id</label>
+            <input type="text" name="task_id" id="task_id" value="<%= task.task_id %>">
+        </div>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="<%= task.title %>">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" value="<%= task.description %>">
+        </div>
+
+        <div class="form-group">
+            <label for="statuss">Statuss</label>
+            <input type="text" name="statuss" id="statuss" value="<%= task.statuss %>">
+        </div>
+
+        <div class="form-group">
+            <label for="grade">Grade</label>
+            <input type="text" name="grade" id="grade" value="<%= task.grade %>">
+        </div>
+
+        <a href="#" class="btn btn-success" id="update">Save</a>
+    </form>
+
+</div>
+
+<script>
+$(document).ready(function () {
+    $('#update').on('click', updateTask)
+})
+
+function updateTask () {
+    var task = {
+        "_id": $('#_id').val(),
+        "task_id": $('#task_id').val(),
+        "title": $('#title').val(),
+        "description": $('#description').val(),
+        "statuss": $('#statuss').val(),
+        "grade": $('#grade').val()
+    }
+    $.ajax({
+        type: 'PUT',
+        url: '/tasks/update',
+        data: task
+    }).done(function (response) {
+        window.location.replace('/')
+    })
+    window.location.replace('/')
+}
+</script>
+
+<% include partials/footer %>
